@@ -87,6 +87,8 @@ Mode.prototype.toString = function () {
     str.push('p');
   } else if (this.isSocket()) {
     str.push('s');
+  } else if (typeof this.stat.mode === 'number') {
+    str.push('x');
   } else {
     throw new TypeError('unexpected "file type"');
   }
